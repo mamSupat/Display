@@ -16,14 +16,24 @@ void display_show_message(const char* message)
     ESP_LOGI(TAG, "📺 Message: %s", message);
 }
 
-void display_show_data(float value1, float value2)
+// แก้ไขชื่อฟังก์ชันและ parameters ให้ตรงกับที่เรียกใช้ใน main.c
+void display_show_sensor_data(float temp, float hum, float heat_index)
 {
-    ESP_LOGI(TAG, "📊 Data display from file: %s, line: %d", __FILE__, __LINE__);
-    ESP_LOGI(TAG, "📈 Value 1: %.2f", value1);
-    ESP_LOGI(TAG, "📉 Value 2: %.2f", value2);
+    ESP_LOGI(TAG, "📊 Sensor data display from file: %s, line: %d", __FILE__, __LINE__);
+    ESP_LOGI(TAG, "🌡️ Temperature: %.2f", temp);
+    ESP_LOGI(TAG, "💧 Humidity: %.2f", hum);
+    ESP_LOGI(TAG, "🔥 Heat Index: %.2f", heat_index);
 }
 
-void display_clear_screen(void)
+// เพิ่มฟังก์ชันที่หายไป
+void display_show_status(const char* status_message)
+{
+    ESP_LOGI(TAG, "📝 Status update from file: %s, line: %d", __FILE__, __LINE__);
+    ESP_LOGI(TAG, "Status: %s", status_message);
+}
+
+// แก้ไขชื่อฟังก์ชันให้ตรงกับที่เรียกใช้ใน main.c
+void display_clear(void)
 {
     ESP_LOGI(TAG, "🧹 Screen cleared from file: %s, line: %d", __FILE__, __LINE__);
     ESP_LOGI(TAG, "✨ Display ready for new content");

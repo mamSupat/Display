@@ -5,28 +5,12 @@
 extern "C" {
 #endif
 
-/**
- * @brief Initialize display module
- */
+// แก้ไขชื่อและ parameters ให้ตรงกับ main.c
 void display_init(void);
-
-/**
- * @brief Show message on display
- * @param message Text message to display
- */
 void display_show_message(const char* message);
-
-/**
- * @brief Show numeric data on display
- * @param value1 First value to display
- * @param value2 Second value to display
- */
-void display_show_data(float value1, float value2);
-
-/**
- * @brief Clear display screen
- */
-void display_clear_screen(void);
+void display_show_sensor_data(float temp, float hum, float heat_index);
+void display_show_status(const char* status_message);
+void display_clear(void);
 
 #ifdef __cplusplus
 }
